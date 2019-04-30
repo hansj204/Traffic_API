@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <color name="colorPrimary">#3F51B5</color>
+        <color name="colorPrimaryDark">#303F9F</color>
+        <color name="colorAccent">#FF4081</color>
+        <color name="iconclick">#f7f7f7</color>
+        <color name="icon">#ffffff</color>
+        <color name="colorWhite">#7167d6</color>
+        <color name="colorTransparentWhite">#cccccc</color>
+
+
+    <color name="default_background">#14c3a2</color>
+    <color name="default_text_color">#a4e2d3</color>
+    <color name="selected_text_color">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <style name="NewDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="Traffic" parent="android:Theme.Holo.Light">
+        <item name="android:actionBarTabStyle">@style/Traffic.ActionBar</item>
+        <item name="android:actionBarDivider">@null</item>
+        <item name="android:actionBarSize">56dp</item>
+        <item name="android:actionBarTabTextStyle">@style/Traffic.ActionBar.TabText</item>
+    </style>
+    <style name="Traffic.ActionBar" parent="@android:style/Widget.ActionBar.TabView">
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="Traffic.ActionBar.TabText" parent="@android:style/Widget.ActionBar.TabText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/tab_bar_text_color</item>
+    </style>
+    <style name="traffic_bus_btn_type_a">
+        <item name="android:background">@drawable/selector_trafficbus_btn_type_a</item>
+    </style>
+
+</resources>
