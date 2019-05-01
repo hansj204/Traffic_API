@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,8 +7,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="69dp"
-        android:background="#FFFFFF"
+        android:background="#00000000"
         android:orientation="horizontal"
         android:padding="12dp">
 
@@ -40,6 +44,7 @@
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 android:src="@drawable/icon_magnifier" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -48,8 +53,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#673AB7">
-
+        android:background="@drawable/background">
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="sdfds"
+            />
         <ListView
             android:id="@+id/search_bus_list_view"
             android:layout_width="match_parent"
@@ -66,5 +76,5 @@
             android:adjustViewBounds="true"
             android:src="@drawable/bg_info" />
     </RelativeLayout>
-
-</LinearLayout>
+    </LinearLayout>
+</FrameLayout>
