@@ -1,5 +1,7 @@
 package com.traffic_api;
 
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabItem;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -19,12 +21,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class Bus extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
-
     private ViewPager mViewPager;
 
     @Override
@@ -39,62 +42,21 @@ public class Bus extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
+
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-
-
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_bus, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public static class PlaceholderFragment extends Fragment {
-
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView;
-            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-                rootView = inflater.inflate(R.layout.fragment_search_by_bus, container, false);
-            } else
-                rootView = inflater.inflate(R.layout.fragment_search_by_station, container, false);
-            return rootView;
+    public void onFragmentChange(int index){
+        search_by_bus_next next = new search_by_bus_next();
+        if(index == 0 ){
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, next).commit();
         }
     }
+
+
+//delete PlaceholderFragment class
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -104,8 +66,17 @@ public class Bus extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
+            switch (position){
+                case 0:
+                    search_by_bus_next tab1= new search_by_bus_next();
+                    return tab1;
+                case 1:
+                    search_by_station tab2= new search_by_station();
+                    return tab2;
+                    default:
+                        return null;
+            }
 
-            return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
