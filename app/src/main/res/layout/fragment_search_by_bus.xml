@@ -9,57 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:background="#00000000"
-        android:orientation="horizontal"
-        android:padding="12dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp">
-
-            <EditText
-                android:id="@+id/search_key"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:hint="버스번호를 입력해주세요."
-                android:includeFontPadding="false"
-                android:inputType="number"
-                android:paddingLeft="5dp"
-                android:singleLine="true"
-                android:textColor="#000000"
-                android:textColorHint="#504F4F"
-                android:textCursorDrawable="@null"
-                android:textSize="16sp" />
-
-            <ImageButton
-                android:id="@+id/search_bus"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:src="@drawable/icon_magnifier" />
-
-        </LinearLayout>
-
-    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/background">
-        <TextView
-            android:id="@+id/text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="sdfds"
-            />
         <ListView
             android:id="@+id/search_bus_list_view"
             android:layout_width="match_parent"
@@ -75,6 +30,10 @@
             android:layout_alignParentBottom="true"
             android:adjustViewBounds="true"
             android:src="@drawable/bg_info" />
+        <Button
+            android:id="@+id/search_bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
     </LinearLayout>
 </FrameLayout>
