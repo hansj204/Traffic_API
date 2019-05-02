@@ -42,7 +42,6 @@ public class Bus extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
-
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
@@ -51,7 +50,8 @@ public class Bus extends AppCompatActivity {
     public void onFragmentChange(int index){
         search_by_bus_next next = new search_by_bus_next();
         if(index == 0 ){
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, next).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, new search_by_bus_next()).commit();
+            //mSectionsPagerAdapter.getItem(2);
         }
     }
 
@@ -68,11 +68,14 @@ public class Bus extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    search_by_bus_next tab1= new search_by_bus_next();
+                    search_by_bus tab1= new search_by_bus();
                     return tab1;
                 case 1:
                     search_by_station tab2= new search_by_station();
                     return tab2;
+                case 2:
+                    search_by_bus_next tab3= new search_by_bus_next();
+                    return tab3;
                     default:
                         return null;
             }
@@ -81,7 +84,7 @@ public class Bus extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
     }
 }
